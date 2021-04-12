@@ -1,17 +1,48 @@
 class Student:
-    def __init__(self, first, last, status):
+    grade = 0
+    passing_grade = 75
+    award_credit = False
+
+    def __init__(self, first, last):
         self.first = first #These are instance variables
         self.last = last
-        self.status = status
         self.email = first + last +'@mail.weber.edu'
 
     #Behaviors
     def printSutdentInfo(self):
-        print('Full Name:', self.first, self.last, '\n Email:', self.email, '\n Course Status:', self.status)
+        print('Full Name:', self.first, self.last, '\nEmail:', self.email, '\nGrade:', self.grade, '\nAward Credit:', self.award_credit)
 
-W01234 = Student('Jayden', 'Owings', 'Pass')
-W01235 = Student('Waldo', 'Wildcat', 'Pass')
+    def setGrade(self, grade):
+        self.grade = grade
+        if self.grade < self.passing_grade:
+            self.award_credit = False
+        else:
+            self.award_credit = True
+
+W01234 = Student('Jayden', 'Owings')
+W01235 = Student('Waldo', 'Wildcat')
+
+print ('Start of the Semester')
+print ('---------------------')
+W01234.printSutdentInfo()
+W01235.printSutdentInfo()
+
+print ('Middle of the Semester')
+print ('---------------------')
+
+W01234.setGrade(45)
+W01235.setGrade(75)
 
 W01234.printSutdentInfo()
 W01235.printSutdentInfo()
+
+print ('End of the Semester')
+print ('---------------------')
+
+W01234.setGrade(85)
+W01235.setGrade(72)
+
+W01234.printSutdentInfo()
+W01235.printSutdentInfo()
+
 
