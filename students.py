@@ -5,11 +5,13 @@ class Student:
         self.status = status
         self.email = first + last +'@mail.weber.edu'
 
+    #Behaviors
+    def printSutdentInfo(self):
+        print('Full Name:', self.first, self.last, '\n Email:', self.email, '\n Course Status:', self.status)
+
 W01234 = Student('Jayden', 'Owings', 'Pass')
 W01235 = Student('Waldo', 'Wildcat', 'Pass')
 
-print(W01234.first, W01234.last, W01234.email, W01234.status)
-print(W01235.first, W01235.last, W01235.email, W01235.status)
+W01234.printSutdentInfo()
+W01235.printSutdentInfo()
 
-# print (W01234.email)
-# print (W01235.email)
