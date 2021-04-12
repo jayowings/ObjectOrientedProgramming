@@ -1,21 +1,15 @@
 class Student:
-    pass
+    def __init__(self, first, last, status):
+        self.first = first #These are instance variables
+        self.last = last
+        self.status = status
+        self.email = first + last +'@mail.weber.edu'
 
-W01234 = Student()
-W01235 = Student()
+W01234 = Student('Jayden', 'Owings', 'Pass')
+W01235 = Student('Waldo', 'Wildcat', 'Pass')
 
-print(W01234)
-print(W01235)
+print(W01234.first, W01234.last, W01234.email, W01234.status)
+print(W01235.first, W01235.last, W01235.email, W01235.status)
 
-W01234.first = "Jayden"
-W01234.last = "Owings"
-W01234.email = "jaydenowings@mail.weber.edu"
-W01234.status = "Pass"
-
-W01235.first = "Waldo"
-W01235.last = "Wildcat"
-W01235.email = "waldowildcat@weber.edu"
-W01235.status = "Pass"
-
-print (W01234.email)
-print (W01235.email)
+# print (W01234.email)
+# print (W01235.email)
