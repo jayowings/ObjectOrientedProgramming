@@ -10,39 +10,22 @@ class Student:
 
     #Behaviors
     def printSutdentInfo(self):
-        print('Full Name:', self.first, self.last, '\nEmail:', self.email, '\nGrade:', self.grade, '\nAward Credit:', self.award_credit)
-
-    def setGrade(self, grade):
-        self.grade = grade
+        print('\nFull Name:', self.first, self.last, '\nEmail:', self.email, '\nGrade:', self.grade, '\nAward Credit:', self.award_credit, "\n")
+    
+    def passingClass(self):
         if self.grade < self.passing_grade:
             self.award_credit = False
         else:
             self.award_credit = True
+    
+    def setGrade(self, grade):
+        self.grade = grade
+        self.passingClass()
+    
+    def extraCredit(self, points):
+        self.grade = self.grade + points
+        self.passingClass()
 
-W01234 = Student('Jayden', 'Owings')
-W01235 = Student('Waldo', 'Wildcat')
-
-print ('Start of the Semester')
-print ('---------------------')
-W01234.printSutdentInfo()
-W01235.printSutdentInfo()
-
-print ('Middle of the Semester')
-print ('---------------------')
-
-W01234.setGrade(45)
-W01235.setGrade(75)
-
-W01234.printSutdentInfo()
-W01235.printSutdentInfo()
-
-print ('End of the Semester')
-print ('---------------------')
-
-W01234.setGrade(85)
-W01235.setGrade(72)
-
-W01234.printSutdentInfo()
-W01235.printSutdentInfo()
-
-
+    @classmethod
+    def setPassingGrade(cls, grade):
+        cls.passing_grade = grade
